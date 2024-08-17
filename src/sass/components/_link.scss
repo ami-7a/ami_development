@@ -1,0 +1,70 @@
+// -------------------------------------------------------------------
+//  link.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+.c-link {
+  margin-top: 10px;
+  @include mix.fontsize(14);
+
+  @include med.media(sp) {
+    @include mix.fontsize(12);
+  }
+  > a {
+    display: inline-block;
+  }
+
+  &.is-map {
+    > a {
+      border-bottom: 1px solid var.$KEY_COLOR;
+
+      span {
+        color: var.$KEY_COLOR;
+        position: relative;
+        padding-right: 20px;
+
+        &::after {
+          content: "";
+          background-image: url("/images/common/icon_pin.svg");
+          background-size: contain;
+          position: absolute;
+          right: 0;
+          bottom: -3px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &.is-tel {
+    > a {
+      border-bottom: 1px solid var.$KEY_COLOR;
+
+      span {
+        letter-spacing: 2.5px;
+        color: var.$KEY_COLOR;
+      }
+    }
+  }
+
+  &.is-blank {
+    position: relative;
+    padding-right: 15px;
+
+    &::after {
+      content: "";
+      background-image: url("/images/common/icon_blank.svg");
+      position: absolute;
+      background-size: cover;
+      right: 0;
+      bottom: 50%;
+      transform: translate(50%, 50%);
+      width: 20px;
+      height: 20px;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}

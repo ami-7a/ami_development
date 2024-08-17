@@ -1,0 +1,15 @@
+// -------------------------------------------------------------------
+//  titleThird.scss
+// -------------------------------------------------------------------
+@use "../../helpers/variables" as var;
+@use "../../helpers/mixin" as mix;
+@use "../../helpers/mediaquery" as med;
+
+.c-title__third {
+  @include mix.fontsize(18);
+  font-weight: var.$FONT_WEIGHT_L;
+
+  + .c-text__base {
+    margin-top: 20px;
+  }
+}

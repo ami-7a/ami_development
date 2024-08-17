@@ -1,0 +1,81 @@
+// -------------------------------------------------------------------
+// 	accordion.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+.c-accordion {
+  .c-accordion__list {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 60px;
+    -webkit-tap-highlight-color: transparent !important; // ボタンがタップされている間に表示される強調色を削除
+  }
+
+  .c-accordion__item {
+    border: 1px solid rgba(var.$KEY_COLOR, 0.3);
+    background-color: var.$KEY_COLOR_WHITE;
+    border-radius: 10px;
+    padding: 0 20px;
+
+    cursor: pointer;
+    flex-basis: calc(50% - 30px);
+
+    @include med.media(sp) {
+      flex-basis: 100%;
+    }
+  }
+
+  .c-accordion__header {
+    background-color: transparent;
+    color: var.$BASE_TEXT_COLOR;
+    line-height: 20px;
+    padding: 20px 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    @include mix.fontsize(15);
+
+    /* プラスボタンのスタイル */
+    &::before,
+    &::after {
+      background-color: var.$KEY_COLOR;
+      content: "";
+      height: 1px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease-out;
+      width: 12px;
+    }
+
+    &::before {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    /* アコーディオン開閉でマイナスに */
+    &.is-active {
+      &::before {
+        transform: translateY(-50%) rotate(0deg);
+      }
+    }
+  }
+
+  .c-accordion__inner {
+    height: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    /* アコーディオン開く（is-show）*/
+    &.is-show {
+      height: auto;
+      max-height: fit-content;
+      opacity: 1;
+      padding-bottom: 20px;
+    }
+  }
+}

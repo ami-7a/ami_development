@@ -1,0 +1,167 @@
+// -------------------------------------------------------------------
+//  top.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+[data-page="top"] {
+  .l-wrapper {
+    padding-top: 0;
+
+    @include med.media(sp) {
+      padding-top: 0;
+    }
+  }
+
+  /* メインビジュアルセクション */
+  .l-mv {
+    position: relative;
+
+    .l-mv__inner {
+      img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+    }
+  }
+
+  /* メッセージセクション */
+  .l-message {
+    .c-text__base {
+      line-height: 2;
+      margin-top: 20px;
+    }
+    .c-text__cursive {
+      margin-top: 20px;
+    }
+  }
+
+  /* サービスセクション */
+  .l-service {
+    margin-bottom: 150px;
+
+    @include med.media(sp) {
+      margin-bottom: 60px;
+    }
+    .l-service__list {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      gap: 100px;
+
+      @include med.media(sp) {
+        flex-direction: column;
+        gap: 60px;
+      }
+    }
+
+    .l-service__item {
+      flex-basis: calc(100% / 3 - 50px);
+      height: auto;
+      position: relative;
+
+      @include med.media(sp) {
+        flex-basis: 100%;
+      }
+    }
+
+    .l-service__image {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+
+      @include med.media(sp) {
+        aspect-ratio: 16 / 9;
+      }
+    }
+
+    .l-service__caption {
+      @include mix.fontsize(16);
+      margin-top: 20px;
+    }
+
+    .c-text__base {
+      margin-top: 10px;
+    }
+
+    .c-btn {
+      position: absolute;
+      bottom: -80px;
+      left: 0;
+      width: 100%;
+
+      @include med.media(sp) {
+        position: initial;
+      }
+    }
+  }
+
+  /* 会社情報セクション */
+  .l-company {
+    background-color: rgba(var.$KEY_COLOR, 0.2);
+    padding: 70px 0;
+
+    @include med.media(sp) {
+      padding: 60px 0;
+    }
+
+    .c-btn {
+      margin-top: 30px;
+    }
+  }
+
+  /* お知らせセクション */
+  .l-information {
+    .l-section__container {
+      max-width: 800px;
+    }
+    .l-information_list {
+      margin-top: 10px;
+    }
+    .l-information__item {
+      border-bottom: 1px solid var.$BASE_BORDER_COLOR;
+      > a {
+        display: flex;
+        gap: 20px;
+        padding: 20px 0;
+        position: relative;
+        padding-right: 40px;
+        @include mix.fontsize(14);
+
+        @include med.media(sp) {
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px 0;
+          @include mix.fontsize(12);
+        }
+
+        .l-information__date {
+          font-family: var.$EN_FONT_FAMILY;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          right: 10px;
+          top: calc(50% - 4px);
+          transform: translateY(-50%);
+          transform-origin: left;
+          width: 20px;
+          height: 8px;
+          background-color: var.$KEY_COLOR;
+          clip-path: polygon(0 100%, 100% 100%, 70% 40%, 70% 90%, 0% 90%);
+          transition: transform 0.5s;
+        }
+
+        &:hover::after {
+          transform: translateY(-50%) scaleX(1.4);
+        }
+      }
+    }
+  }
+
+ 
+}

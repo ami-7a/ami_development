@@ -1,0 +1,55 @@
+// -------------------------------------------------------------------
+//  imgAnimation.scss｜画像表示アニメーション設定
+// -------------------------------------------------------------------
+
+.c-image__wrap {
+  overflow: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    animation: 2s cubic-bezier(0.4, 0, 0.2, 1) forwards paused; // 初期状態でアニメーションを停止
+    background: $BASE_BG_COLOR;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  &::before {
+    animation-name: image-animation-before;
+    top: 0;
+    bottom: 50%;
+  }
+
+  &::after {
+    animation-name: image-animation-after;
+    top: 50%;
+    bottom: 0;
+  }
+
+  > img {
+    width: 100%;
+  }
+
+  &.is-image-view {
+    &::before,
+    &::after {
+      animation-play-state: running;
+    }
+  }
+}
+
+@keyframes image-animation-before {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes image-animation-after {
+  100% {
+    transform: translateX(-100%);
+  }
+}

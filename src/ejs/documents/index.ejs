@@ -1,0 +1,98 @@
+<%- include(`../include/_const.ejs`); %> 
+
+<% const pageMeta = { title: head.documents.title, description: head.documents.description };
+const stylesheet = { directory: head.documents.directory }; %>
+
+<% path = "../";%>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+    <%- include(`${head.documents.directory}include/_head.ejs`, {meta: pageMeta, stylesheet: stylesheet}); %>
+
+    <body data-page="documents">
+        
+        <main>
+            <!-- ヘッダーインクルード -->
+            <%- include(`${head.documents.directory}include/_header.ejs`); %>
+
+            <div class="l-wrapper">
+
+                <!-- パンくずインクルード -->
+                <%- include(`${head.documents.directory}include/_breadcrumb.ejs`,{ pageName:'必要書類' }); %>
+
+                <!-- ページタイトルセクション -->
+                <section class="c-title">
+                    <div class="l-section__container">
+                        <h2 class="c-title__second">
+                            <span class="is-en">Necessary Documents</span>
+                            <span class="is-jp">必要書類</span>
+                        </h2>
+                        <p class="c-text__base">以下より必要書類をクリック、ダウンロードをお願いいたします。（PC推奨）</p>
+                    </div>
+                </section>
+
+                <!-- 必要書類セクション -->
+                <section class="l-document"> 
+                    <div class="l-section__container">
+
+                      <ul class="l-document__list">
+
+                        <!-- 保証委託申込書_個人 -->
+                        <li class="l-document__item">
+                            <a href="<%= path %>pdf/保証会社CASA個人申込書.pdf" target="_blank" rel="noopener noreferrer">
+                                <span class="l-document__icon"></span>
+                                <p class="c-text__base">【代理店用】<br/>保証委託申込書 _ 個人</p>
+                            </a>
+                        </li>
+
+                        <!-- 保証委託申込書_法人 -->
+                        <li class="l-document__item">
+                            <a href="<%= path %>pdf/保証会社CASA法人専用申込書.pdf" target="_blank" rel="noopener noreferrer">
+                                <span class="l-document__icon"></span>
+                                <p class="c-text__base">【代理店用】<br/>保証委託申込書 _ 法人</p>
+                            </a>
+                        </li>
+
+                        <!-- 個人情報取扱規程 _ 株式会社Casa -->
+                        <li class="l-document__item">
+                            <a href="<%= path %>pdf/個人情報取扱規程と信用情報取扱同意書_［2204-2］.pdf" target="_blank" rel="noopener noreferrer">
+                                <span class="l-document__icon"></span>
+                                <p class="c-text__base">個人情報取扱規程 <br /> _ 株式会社Casa</p>
+                            </a>
+                        </li>
+
+                        <!-- 入居申し込みに関する注意事項(仲介業者様) -->
+                        <li class="l-document__item">
+                            <a href="<%= path %>pdf/入居申し込みに関する注意事項（仲介業者様）.pdf" target="_blank" rel="noopener noreferrer">
+                                <span class="l-document__icon"></span>
+                                <p class="c-text__base">入居申し込みに関する<br />注意事項（仲介業者様）</p>
+                            </a>
+                        </li>
+
+                        <!-- 学生専用申込書_株式会社Case -->
+                        <li class="l-document__item">
+                            <a href="<%= path %>pdf/保証会社CASA学生専用申込書.pdf" target="_blank" rel="noopener noreferrer">
+                                <span class="l-document__icon"></span>
+                                <p class="c-text__base">学生専用申込書<br /> _ 株式会社Case</p>
+                            </a>
+                        </li>
+                      </ul>
+                    </div>
+                </section>
+                 
+
+            </div>
+        </main>
+
+       
+        <!-- フッターインクルード -->
+        <%- include(`${head.documents.directory}include/_footer.ejs`); %>
+        
+        
+        <!-- JS -->
+        <%-
+        include(`${head.documents.directory}include/_script.ejs`, { directory: head.documents.directory, loadPageJs: 'main', }); %>
+    </body>
+</html>

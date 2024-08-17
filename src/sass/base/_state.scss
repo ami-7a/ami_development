@@ -1,0 +1,76 @@
+// -------------------------------------------------------------------
+//  state.scss
+// -------------------------------------------------------------------
+@use "../helpers/mediaquery" as med;
+
+.is-hide {
+  display: none !important;
+}
+
+.is-visible {
+  visibility: visible !important;
+}
+
+.is-hidden {
+  visibility: hidden !important;
+}
+
+.is-fixed {
+  position: fixed !important;
+}
+
+.is-absolute {
+  position: absolute !important;
+}
+
+.is-overflow-hidden {
+  overflow: hidden !important;
+}
+
+.is-align-left {
+  text-align: left;
+}
+
+.is-align-right {
+  text-align: right;
+}
+
+.is-align-center {
+  text-align: center;
+}
+
+.is-left {
+  float: left;
+}
+
+.is-right {
+  float: right;
+}
+
+.is-clear {
+  clear: both;
+}
+
+.is-inline {
+  display: inline !important;
+}
+
+.is-inline-block {
+  display: inline-block !important;
+}
+
+.is-sp {
+  @include med.media(pc) {
+    display: none;
+  }
+
+  @include med.media(tb) {
+    display: none;
+  }
+}
+
+.is-pc {
+  @include med.media(sp) {
+    display: none;
+  }
+}

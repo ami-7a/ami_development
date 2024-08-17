@@ -1,0 +1,90 @@
+// -------------------------------------------------------------------
+//  documents.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+[data-page="documents"] {
+  /* 必要書類セクション */
+  .l-document__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    counter-reset: item-counter;
+
+    @include med.media(sp) {
+      gap: 20px;
+      padding: 0 5%;
+    }
+  }
+
+  .l-document__item {
+    flex-basis: calc(100% / 3 - 27px);
+    border-radius: 10px;
+    box-shadow: 0 0 2px var.$KEY_COLOR;
+
+    @include med.media(sp) {
+      flex-basis: 100%;
+    }
+
+    > a {
+      display: block;
+      padding: 20px;
+
+      .l-document__icon {
+        display: block;
+        height: 120px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: rgba(var.$KEY_COLOR_LIGHT_GREY, 0.3);
+        border: 1px solid rgba(var.$KEY_COLOR_LIGHT_GREY, 0.3);
+        transition: all 0.3s ease-out;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          position: absolute;
+          content: "";
+          background-image: url("/images/common/icon_pdf.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          bottom: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 120px;
+          height: 130px;
+        }
+
+        + .c-text__base {
+          margin-top: 20px;
+          position: relative;
+          padding-left: 35px;
+
+          &::before {
+            position: absolute;
+            counter-increment: item-counter;
+            content: counter(item-counter);
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var.$EN_FONT_FAMILY;
+            font-weight: var.$FONT_WEIGHT_M;
+            @include mix.fontsize(35);
+            color: rgba(var.$KEY_COLOR, 0.7);
+          }
+        }
+      }
+
+      &:hover {
+        .l-document__icon {
+          border: 1px solid rgba(var.$KEY_COLOR, 0.8);
+        }
+      }
+    }
+  }
+}

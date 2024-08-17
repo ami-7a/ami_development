@@ -1,0 +1,139 @@
+<%- include(`../include/_const.ejs`); %> 
+
+<% const pageMeta = { title: head.company.title, description: head.company.description };
+const stylesheet = { directory: head.company.directory }; %>
+
+<% path = "../";%>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+    <%- include(`${head.company.directory}include/_head.ejs`, {meta: pageMeta, stylesheet: stylesheet}); %>
+
+    <body data-page="company">
+        
+        <main>
+            <!-- ヘッダーインクルード -->
+            <%- include(`${head.company.directory}include/_header.ejs`); %>
+
+            <div class="l-wrapper">
+
+                <!-- パンくずインクルード -->
+                <%- include(`${head.company.directory}include/_breadcrumb.ejs`,{ pageName:'会社概要' }); %>
+
+                <!-- ページタイトルセクション -->
+                <section class="c-title">
+                    <div class="l-section__container">
+                        <h2 class="c-title__second">
+                            <span class="is-en">Company</span>
+                            <span class="is-jp">会社概要</span>
+                        </h2>
+                        <p class="c-text__base">株式会社オークニエステートについて</p>
+                    </div>
+                </section>
+
+                <!-- 会社概要セクション -->
+                <section class="l-company"> 
+                    <div class="l-section__container">
+                        <div class="l-company__inner">
+                            <div class="l-company__map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d958.1957901186493!2d130.38979844697715!3d33.57688673510532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193d6034d2857%3A0xb4e01f0e82647321!2z44CSODEwLTAwMjQg56aP5bKh55yM56aP5bKh5biC5Lit5aSu5Yy65qGc5Z2C77yT5LiB55uu77yU4oiS77yS77yYIOODj-OCpOODoOODi-ODpeODvOahnOWdgiAzMTA!5e0!3m2!1sja!2sjp!4v1723731117667!5m2!1sja!2sjp"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="l-company__table">
+                                <dl class="c-table c-text__base">
+                                    <dt>CEO</dt>
+                                    <dd>大浦 美稚子（Michiko Oura）</dd>
+                            
+                                    <dt>住所</dt>
+                                    <dd>810-0024<br />福岡県福岡市中央区桜坂3丁目4-28 ハイムニュー桜坂310号室</dd>
+                            
+                                    <dt>電話番号</dt>
+                                    <dd>092-791-3231</dd>
+                            
+                                    <dt>営業時間</dt>
+                                    <dd>09:30 ~ 17:00</dd>
+                            
+                                    <dt>設立</dt>
+                                    <dd>昭和59年8月</dd>
+                            
+                                    <dt>資本金</dt>
+                                    <dd>10,000,000円</dd>
+                            
+                                    <dt>宅建業登録番号</dt>
+                                    <dd>福岡県知事免許（10）第8668号</dd>
+                            
+                                    <dt>業務内容</dt>
+                                    <dd>
+                                        マンション・アパート経営管理<br />
+                                        マンション・戸建て・土地売買取引仲介<br />
+                                        レンタル家具・リフォーム等
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                 <!-- スタッフ紹介セクション -->
+                 <section class="l-staff"> 
+                    <div class="l-section__container">
+                        <div class="l-staff__inner">
+                            <!-- タイトル h03｜スタッフ紹介 -->
+                            <div class="l-staff__title">
+                                <h3 class="c-title__third"><span>スタッフ紹介</span></h3>
+                            </div>
+                            <ul class="l-staff__introduce is-align-center">
+                                <li class="l-staff__item">
+                                  <p class="c-text__base">大浦 美稚子</p>
+                                  <p class="c-text__cursive is-m">Michiko Oura</p>
+                                  <p class="c-text__base"><small>代表取締役社長</small></p>
+                                  <p class="c-text__base">
+                                    <small>警固で不動産を始めて50年になります。<br>女性ならではの視点から、<br>お客様の好みにあったお部屋探しをさせていただきます。</small>
+                                  </p>
+                                </li>
+                      
+                                <li class="l-staff__item">
+                                  <p class="c-text__base">久保 美香</p>
+                                  <p class="c-text__cursive is-m">Mika Kubo</p>
+                                  <p class="c-text__base"><small>宅地建物取引士</small></p>
+                                  <p class="c-text__base">
+                                    <small>賃貸・売買・管理、お家のリフォームまで、<br>なんでもお尋ねください。<br>お客さまの目線でご対応させていただきます。</small>
+                                  </p>
+                                </li>
+                      
+                                <li class="l-staff__item">
+                                  <p class="c-text__base">三浦 美枝</p>
+                                  <p class="c-text__cursive is-m">Mie Miura</p>
+                                  <p class="c-text__base"><small>総務</small></p>
+                                  <p class="c-text__base">
+                                    <small>お家のリフォーム、管理物件のオーナー様、<br>入居者対応を担当しております。</small>
+                                  </p>
+                                </li>
+                      
+                                <li class="l-staff__item">
+                                  <p class="c-text__base">早瀬 千絵</p>
+                                  <p class="c-text__cursive is-m">Chie Hayase</p>
+                                  <p class="c-text__base"><small>経理</small></p>
+                                  <p class="c-text__base">
+                                    <small>インテリア、収納アドバイザーとして<br>アドバイス差し上げます。</small>
+                                  </p>
+                                </li>
+                              </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+       
+        <!-- フッターインクルード -->
+        <%- include(`${head.company.directory}include/_footer.ejs`); %>
+        
+        
+        <!-- JS -->
+        <%-
+        include(`${head.company.directory}include/_script.ejs`, { directory: head.company.directory, loadPageJs: 'main', }); %>
+    </body>
+</html>

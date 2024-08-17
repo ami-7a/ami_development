@@ -1,0 +1,48 @@
+<header id="js-header" class="l-header">
+  <!-- ヘッダーロゴ -->
+  <h1 class="l-header__logo">
+    <a href="<%= path %>">
+      <span class="l-header__logo__text">Site Logo</span>
+    </a>
+  </h1>
+
+  <!-- SPハンバーガーメニュー3本線 -->
+  <div id="js-menu" class="l-header__menubar__wrap is-sp">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- グローバルナビゲーション -->
+  <div class="l-gnav__background is-sp"></div>
+  <div class="l-gnav">
+    <nav class="l-gnav__inner">
+      <ul class="l-gnav__list">
+        <li class="l-gnav__item">
+          <a href="<%= path %>">トップ</a>
+        </li>
+        <li class="l-gnav__item">
+          <a href="<%= path %>rent">賃貸物件</a>
+        </li>
+        <li class="l-gnav__item">
+          <a href="<%= path %>furniture">家具のリース</a>
+        </li>
+        <li class="l-gnav__item">
+          <a href="<%= path %>company">会社概要</a>
+        </li>
+        <li class="l-gnav__item">
+          <button>業者様へ</button>
+          <!-- サブリンク -->
+          <ul class="l-gnav__sublist">
+            <li class="l-gnav__subitem">
+              <a href="<%= path %>documents">必要書類はこちらから</a>
+            </li>
+          </ul>
+        </li>
+        <li class="l-gnav__item is-contact">
+          <a href="<%= path %>contact">お問い合わせ</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

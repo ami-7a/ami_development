@@ -1,0 +1,25 @@
+<div class="c-swiper" id="swiper-<%= index %>">
+  <div class="c-swiper__container is-main js-swiper-main-<%= index %>">
+    <div class="swiper-wrapper">
+      <% images.forEach(function(image) { %>
+        <div class="swiper-slide c-swiper__slide">
+          <img src="<%= path %>images/swiper/<%= image %>.png" alt="" width="200" />
+        </div>
+      <% }); %>
+    </div>
+  </div>
+
+  <div class="swiper-button-next c-swiper__button is-next swiper-button-next-<%= index %>"></div>
+  <div class="swiper-button-prev c-swiper__button is-prev swiper-button-prev-<%= index %>"></div>
+
+  <!-- サムネイル -->
+  <div class="c-swiper__container is-thumbnail js-swiper-thumbnail-<%= index %>">
+    <div class="swiper-wrapper">
+      <% images.forEach(function(image) { %>
+        <div class="swiper-slide c-swiper__slide">
+          <img src="<%= path %>images/swiper/<%= image %>.png" alt="" width="200" />
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</div>

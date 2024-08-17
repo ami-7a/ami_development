@@ -1,0 +1,93 @@
+<%- include(`../include/_const.ejs`); %> 
+
+<% const pageMeta = { title: head.furniture.title, description: head.furniture.description };
+const stylesheet = { directory: head.furniture.directory }; %>
+
+<% path = "../";%>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+    <%- include(`${head.furniture.directory}include/_head.ejs`, {meta: pageMeta, stylesheet: stylesheet}); %>
+
+    <body data-page="furniture">
+        
+        <main>
+            <!-- ヘッダーインクルード -->
+            <%- include(`${head.furniture.directory}include/_header.ejs`); %>
+
+            <div class="l-wrapper">
+
+                <!-- パンくずインクルード -->
+                <%- include(`${head.furniture.directory}include/_breadcrumb.ejs`,{ pageName:'家具のリース' }); %>
+
+                <!-- ページタイトルセクション -->
+                <section class="c-title">
+                    <div class="l-section__container">
+                        <h2 class="c-title__second">
+                            <span class="is-en">Furniture Rental</span>
+                            <span class="is-jp">家具のリース</span>
+                        </h2>
+                        <p class="c-text__base">お家探しと合わせて、家具のリースもご提案しております。</p>
+                    </div>
+                </section>
+
+                 <!-- 家具のリース｜画像 -->
+                 <section class="l-furniture__images"> 
+
+                    <ul class="l-furniture__images__wrap">
+                        <% for (let i = 1; i <= 5; i++) { %>
+                            <li>
+                                <img src="<%= path %>images/furniture/furniture_<%= ('0' + i).slice(-2) %>.png" alt="furniture rental" width="100">
+                            </li>
+                        <% } %>
+                    </ul>
+                </section>
+
+                 <!-- 家具のリース｜ポイントセクション -->
+                 <section class="l-furniture__point">
+                    <div class="l-section__container">
+
+                        <ul class="l-furniture__list">
+                            <li class="l-furniture__item">
+                                <span class="l-furniture__item__icon"></span>
+                                <p class="c-text__base is-emphasize is-align-center">月々 ¥ 3,000 ~</p>
+                                <p class="c-text__base">
+                                  カタログの中からお好きなものをお選びいただけます。<br class="is-pc" />( 3点セットで月々 ¥ 4,800~ )
+                                </p>
+                            </li>
+                      
+                            <li class="l-furniture__item">
+                                <span class="l-furniture__item__icon"></span>
+                                <p class="c-text__base is-emphasize is-align-center">新品の家具をお届け</p>
+                                <p class="c-text__base">
+                                  商品はすべて新品ですので清潔で安心。実際に使用しながらじっくりお試しいただけます。
+                                </p>
+                            </li>
+                      
+                            <li class="l-furniture__item">
+                                <span class="l-furniture__item__icon"></span>
+                                <p class="c-text__base is-emphasize is-align-center">レンタル終了後は<br class="is-pc" >あなたのものに</p>
+                                <p class="c-text__base">
+                                    最低2年間のレンタル後、購入かレンタル継続かを選べます。<br class="is-pc" />( 購入時に追加料金あり )
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                  </section>
+
+                
+            </div>
+        </main>
+
+       
+        <!-- フッターインクルード -->
+        <%- include(`${head.furniture.directory}include/_footer.ejs`); %>
+        
+        
+        <!-- JS -->
+        <%-
+        include(`${head.furniture.directory}include/_script.ejs`, { directory: head.furniture.directory, loadPageJs: 'main', }); %>
+    </body>
+</html>

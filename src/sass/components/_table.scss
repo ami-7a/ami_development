@@ -1,0 +1,37 @@
+// -------------------------------------------------------------------
+//  table.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+.c-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  @include med.media(sp) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  dt {
+    flex-basis: calc(20% - 10px);
+    padding: 5px 10px 5px 20px;
+  }
+
+  dd {
+    flex-basis: calc(80% - 10px);
+    background-color: rgba(var.$KEY_COLOR, 0.03);
+    border-left: 1.5px solid var.$KEY_COLOR;
+    padding: 5px 10px 5px 20px;
+
+    @include med.media(sp) {
+      margin-bottom: 10px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

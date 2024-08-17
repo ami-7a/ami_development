@@ -1,0 +1,38 @@
+// -------------------------------------------------------------------
+//  button.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+.c-btn {
+  display: flex;
+  margin: 20px auto;
+  padding: 0 10px;
+  max-width: 320px;
+
+  .c-btn__link {
+    padding: 10px;
+    border: 1px solid var.$KEY_COLOR;
+    background-color: rgba(var.$KEY_COLOR_WHITE, 0.5);
+    border-radius: 5px;
+    color: var.$KEY_COLOR;
+    @include mix.fontsize(12);
+    font-weight: $FONT_WEIGHT_L;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.c-btn:hover .c-btn__link {
+  animation: btn-hover-animation 1s ease-out;
+}
+
+@keyframes btn-hover-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgb(131 143 130 / 50%);
+  }
+  100% {
+    box-shadow: 0 0 0 1em rgb(0 0 0 / 0%);
+  }
+}

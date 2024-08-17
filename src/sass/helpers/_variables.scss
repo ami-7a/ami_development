@@ -1,0 +1,70 @@
+// -------------------------------------------------------------------
+//  variables.scss
+// -------------------------------------------------------------------
+
+// Width
+// -------------------------------------------------------------------
+$SITE_WIDTH: 1000px;
+$CONTENT_WIDTH: 1366px;
+$BREAK_POINT_SP: 800px;
+$BREAK_POINT_TABLET: 1366px;
+
+// Font
+// -------------------------------------------------------------------
+$BASE_FONT_SIZE: 14;
+$BASE_FONT_SIZE_SP: 16;
+$BASE_LINE_HEIGHT: 1.6;
+$BASE_FONT_FAMILY: "Ibarra Real Nova", serif;
+$EN_FONT_FAMILY: "Ibarra Real Nova", serif;
+$EN_CURSIVE_FONT_FAMILY: "WindSong", cursive;
+
+// Font Weight
+// -------------------------------------------------------------------
+$FONT_WEIGHT_L: 300;
+$FONT_WEIGHT_R: 400;
+$FONT_WEIGHT_M: 500;
+$FONT_WEIGHT_D: 600;
+$FONT_WEIGHT_B: 700;
+
+// Color
+// -------------------------------------------------------------------
+
+// Key Color (Green)
+$KEY_COLOR: #838f82;
+
+// Base Color Black
+$KEY_COLOR_BK: #33322f;
+$BASE_TEXT_COLOR: $KEY_COLOR_BK;
+
+// Base Color White
+$KEY_COLOR_WHITE: #fff;
+$BASE_BG_COLOR: $KEY_COLOR_WHITE;
+
+// Base Color Grey
+$KEY_COLOR_GREY: #807f7d;
+$SUB_TEXT_COLOR: $KEY_COLOR_GREY;
+
+// Base Color Right Grey
+$KEY_COLOR_LIGHT_GREY: #d3d2cf;
+$BASE_BORDER_COLOR: $KEY_COLOR_LIGHT_GREY;
+
+// Base Color Red
+$KEY_COLOR_RED: #c80421;
+
+// Link Color
+// -------------------------------------------------------------------
+$BASE_LINK_COLOR: $KEY_COLOR_RED;
+$BASE_VISITED_COLOR: $BASE_LINK_COLOR;
+$BASE_HOVER_COLOR: $BASE_LINK_COLOR;
+$BASE_ACTIVE_COLOR: $BASE_LINK_COLOR;
+
+// Image Path
+// -------------------------------------------------------------------
+$IMAGE_DIR: "../images/";
+
+// Animation Setting
+// -------------------------------------------------------------------
+$OPACITY_DURATION: 1s;
+$TRANSITION_DURATION: 1s;
+$TRANSITION_EASING: cubic-bezier(0.23, 1, 0.32, 1);
+$BOUNCE_EASING: cubic-bezier(0.175, 0.885, 0.32, 1.275);

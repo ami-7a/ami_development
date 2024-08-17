@@ -1,0 +1,81 @@
+// -------------------------------------------------------------------
+//  rent.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+[data-page="rent"] {
+  /* 賃貸物件情報セクション */
+  .l-rent {
+    .l-rent__detail {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 20px;
+
+      @include med.media(sp) {
+        flex-direction: column-reverse;
+      }
+
+      > div {
+        width: calc(50% - 5px);
+
+        @include med.media(sp) {
+          width: 100%;
+        }
+      }
+
+      + .l-rent__title {
+        margin-top: 100px;
+      }
+    }
+
+    /* 住所MAP */
+    .l_rent__map {
+      margin: 20px auto;
+      > iframe {
+        width: 90%;
+        height: 100px;
+        border: 0;
+
+        @include med.media(sp) {
+          width: 100%;
+        }
+      }
+    }
+
+    .l-rent__detail__btnarea {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-top: 20px;
+      align-items: center;
+      text-wrap: nowrap;
+      word-break: keep-all;
+
+      .c-btn {
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  /* その他管理物件セクション */
+  .l-rent__others {
+    background-color: rgba(var.$KEY_COLOR, 0.1);
+    margin: 0;
+    padding: 80px 0;
+
+    .c-accordion {
+      margin-top: 20px;
+
+      .l_rent__map {
+        iframe {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

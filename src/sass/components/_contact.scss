@@ -1,0 +1,77 @@
+// -------------------------------------------------------------------
+//  contact.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+/* お問い合わせ */
+.c-contact {
+  .c-contact__wrap {
+    display: flex;
+    align-items: stretch;
+    transition: all 0.6s ease-in-out;
+
+    @include med.media(sp) {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+
+    > div {
+      flex-basis: 50%;
+    }
+
+    .c-contact__text {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+
+      .c-contact__title {
+        @include mix.fontsize(20);
+        font-family: var.$EN_FONT_FAMILY;
+        font-weight: $FONT_WEIGHT_L;
+        letter-spacing: 1px;
+      }
+
+      .c-contact__line__image {
+        margin-top: 10px;
+
+        > img {
+          aspect-ratio: 1/1;
+          width: 40px;
+          height: 40px;
+          transition: all 0.6s ease-in-out;
+        }
+      }
+    }
+
+    .c-contact__image {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 5 / 2;
+      object-fit: cover;
+    }
+
+    &:hover {
+      background-color: rgba(var.$KEY_COLOR, 0.05);
+
+      .c-contact__text {
+        &::after {
+          opacity: 0.4;
+        }
+        .c-contact__line__image {
+          > img {
+            transform: scale(1.1);
+
+            @include med.media(sp) {
+              transform: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

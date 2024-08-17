@@ -1,0 +1,173 @@
+<%- include(`include/_const.ejs`); %> 
+
+<% const pageMeta = { title: head.top.title, description: head.top.description };
+const stylesheet = { directory: head.top.directory }; %>
+
+<% path = "./";%>
+
+<!DOCTYPE html>
+<html lang="ja">
+    <%- include(`${head.top.directory}include/_head.ejs`, {meta: pageMeta, stylesheet: stylesheet}); %>
+
+    <body data-page="top">
+        <main>
+            <!-- ヘッダーインクルード -->
+            <%- include(`${head.top.directory}include/_header.ejs`); %>
+
+            <div class="l-wrapper">
+
+                <!-- メインビジュアルセクション -->
+                <section class="l-mv">
+                    <div class="l-mv__inner">
+                        <picture>
+                            <source srcset="https://oakni-estate.website/img/Oakni_main-img.png" media="(min-width: 800px)"  />
+                            <img src="<%= path %>images/top/mv_sp.png" alt="oakni_estate_mv" />
+                        </picture>
+                    </div>
+                </section>
+
+                <!-- メッセージセクション -->
+                <section class="l-message is-align-center">
+                    <div class="l-section__container">
+                        <h2 class="c-title__second is-en">
+                            <span>WELCOME TO OAKNI ESTATE</span>
+                        </h2>
+                        <p class="c-text__base">オークニエステートへようこそ！</p>
+
+                        <p class="c-text__base">
+                        50年前…けやき通りの一角から始まった小さな不動産会社です。<br class="is-pc">
+                        先代は、いい時代も悪い時代もコツコツと信頼を積み重ねて参りました。<br class="is-pc">
+                        現在は不動産業には珍しく、女性だけの会社です。<br class="is-pc">
+                        賃貸仲介、売買仲介また管理業、リフォームなど細やかで迅速な対応を心がけています。<br class="is-pc">
+                        小さなお困り事から何でもお尋ね下さい。いつも温かくご対応差し上げます。
+                        </p>
+
+                        <p class="c-text__cursive is-l">Michiko Oura</p>
+                    </div>
+                </section>
+
+                <!-- サービスセクション -->
+                <section class="l-service">
+                    <div class="l-section__container">
+                        <div class="l-service__contents">
+                            <ul class="l-service__list">
+
+                                <!-- 賃貸物件情報 -->
+                                <li class="l-service__item">
+                                    <a href="">
+                                        <figure>
+                                            <div class="c-image__wrap">
+                                                <img class="l-service__image" src="https://i.pinimg.com/564x/92/24/22/922422b65531bad108be51fa02af47a3.jpg" alt="賃貸物件情報" width="100">
+                                            </div>
+                                            <figcaption class="l-service__caption">賃貸物件情報</figcaption>
+                                        </figure>
+                                        <p class="c-text__base">弊社所有の賃貸物件についてご紹介。
+                                            <small>※満室の場合もございます</small>
+                                        </p>
+                                    </a>
+                                    <%- include(`${head.top.directory}component/_btn` ,{ btnPath:'aa', btnText: '詳しく見る' }) %>
+                                </li>
+
+                                <!-- お部屋探しのお手伝い -->
+                                <li class="l-service__item">
+                                    <a href="">
+                                        <figure>
+                                            <div class="c-image__wrap">
+                                                <img class="l-service__image" src="https://i.pinimg.com/564x/68/a1/a1/68a1a1c0ea1d1fa07ddfd5d26fbf550a.jpg" alt="お部屋探しのお手伝い" width="100">
+                                            </div>
+                                            <figcaption class="l-service__caption">お部屋探しのお手伝い</figcaption>
+                                        </figure>
+                                        <p class="c-text__base">福岡でのお部屋探しをお手伝いいたします。</p>
+                                    </a>
+                                    <%- include(`${head.top.directory}component/_btn` ,{ btnPath:'aa', btnText: '詳しく見る' }) %>
+                                </li>
+
+                                <!-- 家具のリース -->
+                                <li class="l-service__item">
+                                    <a href="<%= path %>furniture">
+                                        <figure>
+                                            <div class="c-image__wrap">
+                                                <img class="l-service__image" src="https://i.pinimg.com/564x/14/af/11/14af114936a8fc368cbe95d68d3eccf9.jpg" alt="service image" width="100">
+                                            </div>
+                                            <figcaption class="l-service__caption">家具のリース</figcaption>
+                                        </figure>
+                                        <p class="c-text__base">ライフスタイルに合わせて家具・家電のリースをご提案しております</p>
+                                    </a>
+                                    <%- include(`${head.top.directory}component/_btn` ,{ btnPath:'aa', btnText: '詳しく見る' }) %>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 会社情報セクション -->
+                <section class="l-company is-align-center">
+                    <div class="l-section__container">
+                        <h2 class="c-title__second is-en">
+                            <span>COMPANY</span>
+                        </h2>
+                        <p class="c-text__base">会社概要</p>
+
+                        <p class="c-text__base">株式会社 オークニエステート</p>
+                        <p class="c-text__base">810-0024 福岡市中央区桜坂3丁目4-28 ハイムニュー桜坂310号室</p>
+                        <div class="c-link is-map">
+                            <a href="https://goo.gl/maps/ThNMbbuNbVJx5YaX6">
+                                <span>google map</span>
+                            </a>
+                        </div>
+                    
+                        <p class="c-link is-tel">Tel：
+                            <a href="tel:092-791-3231">
+                                <span>092-791-3231</span>
+                            </a>
+                        </p>
+                        
+                        <p class="c-link is-tel">Fax：
+                            <a href="tel:092-791-3241">
+                                <span>092-791-3241</span>
+                            </a>
+                        </p>
+                        
+                        <%- include(`${head.top.directory}component/_btn` ,{ btnPath:'aa', btnText: '詳しく見る' }) %>
+                    </div>
+                </section>
+
+                <!-- お知らせセクション -->
+                <section class="l-information">
+                    <div class="l-section__container">
+                        <h2 class="c-title__second is-en is-align-center">
+                            <span>INFORMATION</span>
+                        </h2>
+                        <p class="c-text__base is-align-center">お知らせ</p>
+                        <ul class="l-information_list">
+                            <li class="l-information__item">
+                                <a href="#">
+                                    <time class="l-information__date" datetime="2024-01-01">2024.01.01</time>
+                                    <span class="l-information__text">オフィス移転のご案内</span>
+                                </a>
+                            </li>
+                            <li class="l-information__item">
+                                <a href="#">
+                                    <time class="l-information__date" datetime="2020-01-01">2020.01.01</time>
+                                    <span class="l-information__text">新年のご挨拶</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- お問い合わせセクション -->
+                <%- include(`${head.top.directory}component/_contact.ejs`); %>
+            </div>
+        </main>
+
+       
+        <!-- フッターインクルード -->
+        <%- include(`${head.top.directory}include/_footer.ejs`); %>
+        
+        
+        <!-- JS -->
+        <%-
+        include(`${head.top.directory}include/_script.ejs`, { directory: head.top.directory, loadPageJs: 'main', }); %>
+    </body>
+</html>

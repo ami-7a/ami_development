@@ -1,0 +1,242 @@
+// -------------------------------------------------------------------
+//  header.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  transition: all 0.3s ease;
+  background: var.$BASE_BG_COLOR;
+  box-shadow: 0 1px 4px #60606027;
+
+  /* ヘッダーロゴ or テキスト */
+  .l-header__logo {
+    @include med.media(sp) {
+      width: 100%;
+    }
+
+    .l-header__logo__text {
+      @include mix.fontsize(23);
+
+      @include med.media(sp) {
+        @include mix.fontsize(20);
+      }
+    }
+  }
+
+  /* SP｜３本ライン */
+  .l-header__menubar__wrap {
+    @include med.media(sp) {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    > span {
+      @include med.media(sp) {
+        position: absolute;
+        left: calc(50% - 20px);
+        width: 30px;
+        height: 1px;
+        display: block;
+        background-color: #000;
+        border-radius: 10px;
+        transform-origin: center;
+        transition: all 0.3s ease-out;
+      }
+
+      &:nth-child(1) {
+        @include med.media(sp) {
+          top: 22px;
+        }
+      }
+      &:nth-child(2) {
+        @include med.media(sp) {
+          top: 29px;
+        }
+      }
+      &:nth-child(3) {
+        @include med.media(sp) {
+          top: 36px;
+        }
+      }
+    }
+  }
+
+  /* SP｜グロナビ背景 */
+  .l-gnav__background {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #000;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    z-index: -1;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  /* SP｜初期グロナビ非表示（右に隠す） */
+  .l-gnav {
+    @include med.media(sp) {
+      width: 0;
+      height: calc(100dvh - 60px);
+      position: absolute;
+      right: -100%;
+      top: 60px;
+      transition: all 0.7s ease-in-out;
+    }
+
+    /* グロナビレイアウト */
+    .l-gnav__inner {
+      .l-gnav__list {
+        display: flex;
+        align-items: center;
+
+        @include med.media(sp) {
+          display: block;
+          height: 100%;
+          padding: 50px;
+        }
+      }
+
+      .l-gnav__item {
+        text-align: center;
+        position: relative;
+
+        @include med.media(sp) {
+          text-align: left;
+        }
+
+        > a,
+        button {
+          padding: 0 15px;
+          @include mix.fontsize(14);
+          color: var.$BASE_TEXT_COLOR;
+          height: 60px;
+          line-height: 60px;
+          display: inline-block;
+
+          @include med.media(sp) {
+            padding: 0;
+            height: 50px;
+            line-height: 50px;
+          }
+        }
+
+        + .l-gnav__item {
+          @include med.media(sp) {
+            margin-top: 20px;
+          }
+        }
+
+        &:has(.l-gnav__sublist) {
+          &:hover {
+            .l-gnav__sublist {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    /* サブナビゲーションレイアウト */
+    .l-gnav__sublist {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      word-break: keep-all;
+
+      @include med.media(sp) {
+        position: initial;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .l-gnav__subitem {
+        > a {
+          color: var.$BASE_TEXT_COLOR;
+          display: inline-block;
+          background-color: transparent;
+          padding: 10px 15px;
+          @include mix.fontsize(12);
+
+          @include med.media(sp) {
+            @include mix.fontsize(12);
+          }
+        }
+      }
+    }
+  }
+
+  // ---------------------------------------------
+  // is-open｜グロナビ表示
+  // ---------------------------------------------
+  &.is-open {
+    .l-gnav__background {
+      visibility: visible;
+      opacity: 0.3;
+    }
+    .l-gnav {
+      right: 0;
+      width: 80vw;
+      background-color: var.$BASE_BG_COLOR;
+    }
+
+    /* ３本ラインからばつ印へ */
+    .l-header__menubar__wrap {
+      > span {
+        background-color: var.$SUB_TEXT_COLOR;
+
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(6px, 5px);
+        }
+        &:nth-child(2) {
+          // transform: translateX(60px); // ←右に消える
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(6px, -5px);
+        }
+      }
+    }
+  }
+}
+
+// -------------------------------------------------------------------
+// ヘッダー初期で透過させる時の設定（必要なければ削除）｜JSはheader.jsに記述
+// -------------------------------------------------------------------
+
+/* TOPから500px(PCは120px)以上スクロールがした場合、背景色をBASE COLORに設定 */
+
+[data-page="top"] {
+  .l-header {
+    background: transparent;
+    box-shadow: none;
+
+    &.is-scrolled {
+      background: var.$BASE_BG_COLOR;
+      box-shadow: 0 1px 4px #60606027;
+    }
+  }
+}

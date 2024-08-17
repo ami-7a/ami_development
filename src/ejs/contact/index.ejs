@@ -1,0 +1,51 @@
+<%- include(`../include/_const.ejs`); %> 
+
+<% const pageMeta = { title: head.contact.title, description: head.contact.description };
+const stylesheet = { directory: head.contact.directory }; %>
+
+<% path = "../";%>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+    <%- include(`${head.contact.directory}include/_head.ejs`, {meta: pageMeta, stylesheet: stylesheet}); %>
+
+    <body data-page="contact">
+        
+        <main>
+            <!-- ヘッダーインクルード -->
+            <%- include(`${head.contact.directory}include/_header.ejs`); %>
+
+            <div class="l-wrapper">
+
+                <!-- パンくずインクルード -->
+                <%- include(`${head.contact.directory}include/_breadcrumb.ejs`,{ pageName:'お問い合わせ' }); %>
+
+                <!-- ページタイトルセクション -->
+                <section class="c-title">
+                    <div class="l-section__container">
+                        <h2 class="c-title__second">
+                            <span class="is-en">Contact</span>
+                            <span class="is-jp">お問い合わせ</span>
+                        </h2>
+                        <p class="c-text__base">LINEよりお問い合わせください。担当者より２営業日以内にご連絡させていただきます。</p>
+                    </div>
+                </section>
+
+                <!-- お問い合わせセクション -->
+                <%- include(`${head.contact.directory}component/_contact.ejs`); %>
+                
+            </div>
+        </main>
+
+       
+        <!-- フッターインクルード -->
+        <%- include(`${head.contact.directory}include/_footer.ejs`); %>
+        
+        
+        <!-- JS -->
+        <%-
+        include(`${head.contact.directory}include/_script.ejs`, { directory: head.contact.directory, loadPageJs: 'main', }); %>
+    </body>
+</html>

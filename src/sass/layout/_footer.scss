@@ -1,0 +1,71 @@
+// -------------------------------------------------------------------
+//  footer.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+.l-footer {
+  @include mix.fontsize(12);
+  border-top: 0.7px solid var.$BASE_BORDER_COLOR;
+
+  .l-footer__wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  /* フッターロゴ */
+  .l-footer__logo {
+    .l-footer__logo__image {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      aspect-ratio: 1/1;
+
+      @include med.media(sp) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  /* フッターナビ */
+  .l-footer__nav {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 20px;
+
+    .l-footer__nav__list {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include med.media(sp) {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .l-footer__social {
+    .l-footer__social__list {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  /* コピーライト */
+  .l-copyright {
+    padding: 20px 0;
+    background-color: rgba(var.$KEY_COLOR, 0.1);
+
+    .l-copyright__text {
+      font-family: var.$EN_FONT_FAMILY;
+    }
+  }
+}

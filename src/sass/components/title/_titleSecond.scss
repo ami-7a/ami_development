@@ -1,0 +1,56 @@
+// -------------------------------------------------------------------
+//  titleSecond.scss
+// -------------------------------------------------------------------
+@use "../../helpers/variables" as var;
+@use "../../helpers/mixin" as mix;
+@use "../../helpers/mediaquery" as med;
+
+[data-page="top"] {
+  .c-title__second {
+    &.is-en {
+      @include mix.fontsize(20);
+      font-family: var.$EN_FONT_FAMILY;
+      font-weight: $FONT_WEIGHT_L;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.c-title {
+  .c-title__second {
+    span {
+      display: block;
+      letter-spacing: 1px;
+      line-height: 120%;
+
+      &.is-en {
+        @include mix.fontsize(40);
+        font-family: var.$EN_FONT_FAMILY;
+        font-weight: $FONT_WEIGHT_M;
+        color: var.$KEY_COLOR;
+        opacity: 0.5;
+
+        @include med.media(sp) {
+          @include mix.fontsize(35);
+        }
+      }
+
+      &.is-jp {
+        @include mix.fontsize(18);
+        font-weight: $FONT_WEIGHT_L;
+
+        @include med.media(sp) {
+          @include mix.fontsize(16);
+        }
+      }
+    }
+
+    + .c-text__base {
+      margin-top: 20px;
+    }
+  }
+
+  &:has(+ .c-contact) {
+    margin-bottom: 50px;
+  }
+}

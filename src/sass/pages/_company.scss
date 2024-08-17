@@ -1,0 +1,70 @@
+// -------------------------------------------------------------------
+//  company.scss
+// -------------------------------------------------------------------
+@use "../helpers/variables" as var;
+@use "../helpers/mixin" as mix;
+@use "../helpers/mediaquery" as med;
+
+[data-page="company"] {
+  /* 会社概要セクション */
+  .l-company {
+    .l-company__inner {
+      display: flex;
+      gap: 60px;
+      align-items: stretch;
+
+      @include med.media(sp) {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    .l-company__map {
+      flex-basis: calc(30% - 30px);
+
+      > iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+
+    .l-company__table {
+      flex-basis: calc(70% - 30px);
+      padding: 20px 0;
+
+      @include med.media(sp) {
+        padding: 0;
+      }
+    }
+  }
+
+  /* スタッフ紹介セクション */
+  .l-staff {
+    .l-staff__introduce {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 40px auto 0;
+      max-width: 1000px;
+
+      @include med.media(sp) {
+        gap: 20px;
+      }
+
+      .l-staff__item {
+        flex-basis: calc(50% - 20px);
+        box-shadow: 0 0 7px var.$KEY_COLOR_LIGHT_GREY;
+        padding: 20px;
+
+        @include med.media(sp) {
+          flex-basis: 100%;
+        }
+
+        .c-text__cursive {
+          color: var.$KEY_COLOR;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+// -------------------------------------------------------------------
+//  tab.scss｜タブ切り替え
+// -------------------------------------------------------------------
+
+.tab_list {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 50px;
+  padding: 0;
+}
+.tab_item {
+  padding: 3% 13%;
+  margin: 0 2%;
+  list-style: none;
+  border: solid 1px #fff;
+  color: #fff;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 40px;
+  text-align: center;
+  cursor: pointer;
+
+  &.is-active {
+    background: #fff;
+    border: solid 1px #fff;
+    box-shadow: 0 3px 6px #fff;
+    color: #fff;
+    transition: all 0.2s ease-out;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url(/assets/images/dgc2023/tab_arrow.svg);
+      position: absolute;
+      bottom: 0;
+      top: 75%;
+      left: 45%;
+      width: 10%;
+      height: auto;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.agenda-content {
+  display: none;
+  &.is-show {
+    display: block;
+  }
+}
+
+// -------------------------------------------------------------------
+// PC版
+// -------------------------------------------------------------------
+
+@media (min-width: 768px) {
+  .tab_list {
+    max-width: 1000px;
+    margin: 20px auto 80px;
+  }
+  .tab_item {
+    padding: 15px 19%;
+    margin: 0 1%;
+    font-size: 16px;
+
+    &.is-active {
+      &::after {
+        left: 47%;
+        width: 11%;
+        background-size: 45%;
+      }
+    }
+  }
+}

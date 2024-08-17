@@ -1,0 +1,239 @@
+<%- include(`../include/_const.ejs`); %> 
+
+<% const pageMeta = { title: head.rent.title, description: head.rent.description };
+const stylesheet = { directory: head.rent.directory }; %>
+
+<% path = "../";%>
+
+ <%
+  const images1 = [
+    'rent/swiper_image_01_01',
+    'rent/swiper_image_01_02',
+    'rent/swiper_image_01_03',
+    'rent/swiper_image_01_04',
+    <!-- 'rent/swiper_image_01_05', -->
+  ];
+
+  const images2 = [
+    'rent/swiper_image_02_01',
+    'rent/swiper_image_02_02',
+    'rent/swiper_image_02_03',
+    'rent/swiper_image_02_04',
+    <!-- 'rent/swiper_image_02_05', -->
+  ];
+%>
+
+<!DOCTYPE html>
+<html lang="ja">
+    <%- include(`${head.rent.directory}include/_head.ejs`, {meta: pageMeta, stylesheet: stylesheet}); %>
+
+    <body data-page="rent">
+        
+        <main>
+            <!-- ヘッダーインクルード -->
+            <%- include(`${head.rent.directory}include/_header.ejs`); %>
+
+            <div class="l-wrapper">
+
+                <!-- パンくずインクルード -->
+                <%- include(`${head.rent.directory}include/_breadcrumb.ejs`,{ pageName:'賃貸物件情報' }); %>
+
+                <!-- ページタイトルセクション -->
+                <section class="c-title">
+                    <div class="l-section__container">
+                        <h2 class="c-title__second">
+                            <span class="is-en">ROOMS</span>
+                            <span class="is-jp">賃貸物件情報</span>
+                        </h2>
+                        <p class="c-text__base">弊社所有の物件、また空き情報についてお知らせします。</p>
+                    </div>
+                </section>
+
+                <!-- 賃貸物件情報セクション -->
+                <section class="l-rent"> 
+                    <div class="l-section__container">
+
+                        <!-- タイトル h03｜オークヒルズ歯科大 -->
+                        <div class="l-rent__title">
+                            <h3 class="c-title__third"><span>オークヒルズ歯科大</span></h3>
+                        </div>
+                        
+                        <!-- flex -->
+                        <div class="l-rent__detail">
+
+                            <div class="l-rent__detail__text">
+                                <p class="c-text__base">〒814-0165<br />福岡市早良区次郎丸4-16-11</p>
+
+                                <div class="l_rent__map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d523.0216136823207!2d130.32839737695528!3d33.54698068749081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354194ea761cdec7%3A0xc2094a03a7811285!2z44CSODE0LTAxNjUg56aP5bKh55yM56aP5bKh5biC5pep6Imv5Yy65qyh6YOO5Li477yU5LiB55uu77yR77yW4oiS77yR77yQIOOCquODvOOCr-ODkuODq-OCuuatr-enkeWkpw!5e0!3m2!1sja!2sjp!4v1723109475920!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+
+                                <p class="c-text__base">
+                                    <small>
+                                         福岡歯科大学より徒歩5分<br />
+                                        ワンルーム・ロフト付き<br />
+                                        インターネット無料
+                                    </small>
+                                </p>
+
+                                <div class="l-rent__detail__btnarea">
+                                    <p class="c-text__base is-emphasize">入居者募集中</p>
+
+                                    <%- include(`${head.rent.directory}component/_btn` ,{ btnPath:'aa', btnText: '不動産情報はこちらから', target: 'blank'}) %>
+                                </div>
+
+                            </div>
+
+                            <!-- swiper -->
+                            <div class="l-swiper">
+                                <%- include(`${head.rent.directory}component/_swiper.ejs`, { images: images1, index: 1 }); %>
+                            </div>
+                        </div>
+
+                        <!-- タイトル h03｜グリーンヒルズ有田 -->
+                        <div class="l-rent__title">
+                            <h3 class="c-title__third"><span>グリーンヒルズ有田</span></h3>
+                        </div>
+
+                        <!-- flex -->
+                        <div class="l-rent__detail">
+                            <div class="l-rent__detail__text">
+                                <p class="c-text__base">〒814-0033<br />福岡市早良区有田1-27-1</p>
+
+                                <div class="l_rent__map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d373.33517321786405!2d130.33463719276497!3d33.56558030149185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541949de60948af%3A0x965d5a7015211e11!2z44CSODE0LTAwMzMg56aP5bKh55yM56aP5bKh5biC5pep6Imv5Yy65pyJ55Sw77yR5LiB55uu77yS77yX4oiS77yR!5e0!3m2!1sja!2sjp!4v1723176696223!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+
+                                <p class="c-text__base">
+                                    <small>
+                                        バス停徒歩１分<br />
+                                        ワンルーム・ロフト付き<br />
+                                        無料Wi-Fi JCOM
+                                    </small>
+                                </p>
+
+                                 <div class="l-rent__detail__btnarea">
+                                    <p class="c-text__base is-emphasize">入居者募集中</p>
+
+                                    <%- include(`${head.rent.directory}component/_btn` ,{ btnPath:'https://www.f-takken.com/freins/rent/houses/keyword/items?keyword=%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%92%E3%83%AB%E3%82%BA%E6%9C%89%E7%94%B0&_token=fLTQOazPZ3T2HA7cIkEABxCpZ1PjdAM9b3WdpQu6', btnText: '不動産情報はこちらから',target: 'blank' }) %>
+                                </div>
+                            </div>
+
+                            <!-- swiper -->
+                            <div class="l-swiper">
+                                <%- include(`${head.rent.directory}component/_swiper.ejs`, { images: images2, index: 2 }); %>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                 
+
+                <!-- その他管理物件セクション -->
+                <section class="l-rent__others">
+                    <div class="l-section__container">
+                        <!-- タイトル h03 -->
+                        <div class="l-rent__title">
+                            <h3 class="c-title__third"><span>その他管理物件</span></h3>
+                        </div>
+
+                        <div class="c-accordion">
+                            <ul class="c-accordion__list">
+
+                                <!-- 西新ビル -->
+                                <li class="c-accordion__item">
+                                    <button class="js-accordionTrigger c-accordion__header">
+                                    <span>西新ビル</span>
+                                    </button>
+                                    <div class="js-accordionInner c-accordion__inner">
+                                        <p class="c-text__base">〒814-0011 福岡市早良区高取 1-1-53 </p>
+                                        <div class="l_rent__map">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8983374104682!2d130.35053587571213!3d33.58198874241476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193a13b9b3309%3A0x58174fcebc288360!2z44CSODE0LTAwMTEg56aP5bKh55yM56aP5bKh5biC5pep6Imv5Yy66auY5Y-W77yR5LiB55uu77yR4oiS77yV77yTIOilv-aWsOODk-ODqw!5e0!3m2!1sja!2sjp!4v1723707890191!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- 大濠ハイツ -->
+                                <li class="c-accordion__item">
+                                    <button class="js-accordionTrigger c-accordion__header">
+                                    <span>大濠ハイツ</span>
+                                    </button>
+                                    <div class="js-accordionInner c-accordion__inner">
+                                        <p class="c-text__base">〒814-0044 福岡市中央区六本松 3-16-28 </p>
+                                        <div class="l_rent__map">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.9325751644064!2d130.38027027571192!3d33.58109984246111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193d22d396f77%3A0xb918510242abef95!2z44CSODEwLTAwNDQg56aP5bKh55yM56aP5bKh5biC5Lit5aSu5Yy65YWt5pys5p2-77yT5LiB55uu77yR77yW4oiS77yS77yYIOWkp-a_oOODj-OCpOODhA!5e0!3m2!1sja!2sjp!4v1723708115572!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- ラフィネス薬院イーストコート -->
+                                <li class="c-accordion__item">
+                                    <button class="js-accordionTrigger c-accordion__header">
+                                    <span>ラフィネス薬院イーストコート</span>
+                                    </button>
+                                    <div class="js-accordionInner c-accordion__inner">
+                                        <p class="c-text__base">〒810-0014 福岡市中央区平尾 1-6-23 </p>
+                                        <div class="l_rent__map">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.035118016407!2d130.3988538757119!3d33.57843744259997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541919d5ae07ec1%3A0xca9f3bf5a73b8ac9!2z44CSODEwLTAwMTQg56aP5bKh55yM56aP5bKh5biC5Lit5aSu5Yy65bmz5bC-77yR5LiB55uu77yW4oiS77yS77yTIOODqeODleOCo-ODjeOCueiWrOmZouOCpOODvOOCueODiOOCv-ODr-ODvA!5e0!3m2!1sja!2sjp!4v1723708205264!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- リトル中洲 -->
+                                <li class="c-accordion__item">
+                                    <button class="js-accordionTrigger c-accordion__header">
+                                    <span>リトル中洲</span>
+                                    </button>
+                                    <div class="js-accordionInner c-accordion__inner">
+                                        <p class="c-text__base">〒810-0801 福岡市博多区中州 2-7-3 </p>
+                                        <div class="l_rent__map">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.5131354857954!2d130.40637337571238!3d33.59198814189279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191951aac3f83%3A0xf271e8c8e8dace4a!2z44CSODEwLTA4MDEg56aP5bKh55yM56aP5bKh5biC5Y2a5aSa5Yy65Lit5rSy77yS5LiB55uu77yX4oiS77yTIOODquODiOODq-S4rea0suODk-ODqw!5e0!3m2!1sja!2sjp!4v1723708347038!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- グリーンヒルズ平尾 -->
+                                <li class="c-accordion__item">
+                                    <button class="js-accordionTrigger c-accordion__header">
+                                    <span>グリーンヒルズ平尾</span>
+                                    </button>
+                                    <div class="js-accordionInner c-accordion__inner">
+                                        <p class="c-text__base">〒815-0083 福岡市南区高宮 1-22-1 </p>
+                                        <div class="l_rent__map">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.299992297407!2d130.40294647571176!3d33.57155944295876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541917154c00275%3A0x3f51f4d90dcb3364!2z44CSODE1LTAwODMg56aP5bKh55yM56aP5bKh5biC5Y2X5Yy66auY5a6u77yR5LiB55uu77yS77yS4oiS77yRIOOCsOODquODvOODs-ODkuODq-OCuuW5s-Wwvg!5e0!3m2!1sja!2sjp!4v1723708400595!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- コーポ平和 A棟・B棟 -->
+                                <li class="c-accordion__item">
+                                    <button class="js-accordionTrigger c-accordion__header">
+                                    <span>コーポ平和 A棟・B棟</span>
+                                    </button>
+                                    <div class="js-accordionInner c-accordion__inner">
+                                        <p class="c-text__base">〒819-0001 福岡市西区小戸 3-7-12 </p>
+                                        <div class="l_rent__map">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.6782091056043!2d130.3140224757123!3d33.58770334211653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541934f2ac9f7c5%3A0x95ef429a84d1c499!2z44CSODE5LTAwMDEg56aP5bKh55yM56aP5bKh5biC6KW_5Yy65bCP5oi477yT5LiB55uu77yX4oiS77yR77yS!5e0!3m2!1sja!2sjp!4v1723708465749!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                            
+                          
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+       
+        <!-- フッターインクルード -->
+        <%- include(`${head.rent.directory}include/_footer.ejs`); %>
+        
+        
+        <!-- JS -->
+        <%-
+        include(`${head.rent.directory}include/_script.ejs`, { directory: head.rent.directory, loadPageJs: 'main', }); %>
+    </body>
+</html>
